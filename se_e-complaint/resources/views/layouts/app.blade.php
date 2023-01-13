@@ -33,13 +33,11 @@
     @if (Auth::check())
         <div class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container d-flex justify-content-between">
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+            <div>
+            <h2><span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776; </span>&nbsp Welcome to e-complaint </h2>
+            </div>
                 <div>
-                    <h4 class="m-auto">{{ Auth::user()->first_name.' '.Auth::user()->last_name }}</h4>
-                    <div class="d-flex justify-content-between">
-                        <div class="m-auto me-2">
-                            <img src="{{ asset(Auth::user()->GetAvatar()) }}" alt="" width="30px" height="30px" class="rounded-circle">
-                        </div>
+                    <h5 class="m-auto"><img src="{{ asset(Auth::user()->GetAvatar()) }}" alt="" width="30px" height="30px" class="rounded-circle">&nbsp{{ Auth::user()->first_name.' '.Auth::user()->last_name }}</h5>
                         <form action="{{ route('logout') }}" method="POST" class="">
                             @csrf
                             <button type="submit" class="btn btn-danger text-white">Logout</button>
@@ -51,15 +49,17 @@
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-            <a href="{{ route('home') }}" class="text-decoration-none"><h2 class="text-black text-center">e-Complaint</h2></a>
+            <a href="{{ route('home') }}" class="text-decoration-none"><h1 class="text-black text-center">e-Complaint</h1></a>
 
             <div class="d-flex justify-content-center my-3">
-                <img src="{{ asset(Auth::user()->GetAvatar()) }}" alt="profile.png" height="350px">
+                <img src="{{ asset(Auth::user()->GetAvatar()) }}" alt="profile.png" height="150px">
             </div>
 
             <div class="text-center">
                 <h4>Name: {{ Auth::user()->first_name.' '.Auth::user()->last_name }}</h4>
-
+            </div>
+                <div class="list-group text-left">
+                    <a href="{{ route('home') }}"><b>Dashboard</b></a>
                 @if (Auth::user()->HasRole())
                     <div class="list-group">
                         @if (Auth::user()->IsHelpDesk())

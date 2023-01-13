@@ -11,7 +11,7 @@
                             Profile image
                         </label>
                         <div>
-                            <img class="bg-white" src="{{ asset($user->GetAvatar()) }}" alt="profile_image" width="200px">
+                            <img class="bg-white" src="{{ asset($user->GetAvatar()) }}" alt="profile_image" width="100px">
                         </div>
                     </div>
 

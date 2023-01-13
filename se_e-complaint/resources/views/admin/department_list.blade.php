@@ -8,7 +8,7 @@
             Manage Department
         </h1>
         <div>
-            <a href="{{ route('departments.create') }}"><img src="{{ asset('images/plus.png') }}" alt="plus.png"></a>
+            <a href="{{ route('departments.create') }}"><img src="{{ asset('images/plus.png') }}" alt="plus.png" class="rounded-circle"></a>
         </div>
     </div>
     @include('components.action_message')

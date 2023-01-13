@@ -10,7 +10,7 @@
                         <input type="text" name="search" value="{{ request()->query('search') }}" class="form-control rounded" placeholder="Search Title"
                             aria-label="Search" aria-describedby="search-addon" />
                         <span class="input-group-text border-0" id="search-addon">
-                            <input class="btn btn-info" type="submit">
+                            <input class="btn btn-success " type="Search">
                         </span>
                     </div>
                 </div>

@@ -15,3 +15,4 @@ September 2022 - BIBIS2123 Software Engineering Web Design Project
 5. run command: php artisan migrate:fresh --seed
 6. Done! (run command to start server: php artisan serve)
 ---
+Hiiiii

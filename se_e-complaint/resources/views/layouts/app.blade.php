@@ -60,6 +60,7 @@
             </div>
                 <div class="list-group text-left">
                     <a href="{{ route('home') }}"><b>Dashboard</b></a>
+                    <a href="{{ route('complaints.create') }}">Lodge Complaint</a>
                 @if (Auth::user()->HasRole())
                     <div class="list-group">
                         @if (Auth::user()->IsHelpDesk())

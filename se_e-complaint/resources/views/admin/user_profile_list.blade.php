@@ -8,7 +8,7 @@
             User List
         </h1>
         <div>
-            <a href="{{ route('users.create') }}"><img src="{{ asset('/images/plus.png') }}" alt="plug.png"></a>
+            <a href="{{ route('users.create') }}"><img src="{{ asset('/images/plus.png') }}" alt="" width="50px" height="50px" class="rounded-circle"></a>
         </div>
     </div>
     @include('components.action_message')

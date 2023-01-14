@@ -47,10 +47,10 @@
                             <td>{{ $verified_complaint->status->name }}</td>
                             <td>
                                 <div class="d-inline-flex w-100 justify-content-around">
-                                    <a href="{{ route('executive.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}"><i class="fa-solid fa-file-lines view_icon me-2"></i></a>
+                                    <a href="{{ route('executive.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}"><img src="{{ asset('images/view_file.png') }}" alt="" width="30px" height="30px"></a>
 
                                     @if ($verified_complaint->status_id == 5 || ($verified_complaint->status_id == 2 && $verified_complaint->complaint_action_id != 4))
-                                        <a href="{{ route('executive.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}#operation"><i class="fa-solid fa-handshake-simple accept_decline_icon me-2"></i></a>
+                                        <a href="{{ route('executive.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}#operation"><img src="{{ asset('images/checkmark.png') }}" alt="" width="30px" height="30px"></a>
                                     @elseif ($verified_complaint->status_id == 3)
                                         <a href="{{ route('executive.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}#operation"><i class="fa-solid fa-pen-to-square edit_icon"></i></a>
                                     @endif

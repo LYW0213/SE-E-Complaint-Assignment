@@ -9,8 +9,8 @@
                     <div class="input-group rounded">
                         <input type="text" name="search" value="{{ request()->query('search') }}" class="form-control rounded" placeholder="Search Title"
                             aria-label="Search" aria-describedby="search-addon" />
-                        <span class="input-group-text border-0" id="search-addon">
-                            <input class="btn btn-success " type="Search">
+                        <span id="search-addon"> 
+                            <input class="btn btn-success mx-2" type="submit" value="Search">
                         </span>
                     </div>
                 </div>
@@ -52,9 +52,8 @@
                                 <td class="d-none d-sm-table-cell">{{ $complaint->status->name }}</td>
                                 <td>
                                     <div class="d-inline-flex w-100 justify-content-around">
-                                        <a href="{{ route('helpdesk.complaints.show', ['complaint' => $complaint->id, 'search' => request()->query('search'), 'status_filter' => request()->query('status_filter')]) }}"><i class="fa-solid fa-eye view_icon me-2"></i></a>
+                                        <a href="{{ route('helpdesk.complaints.show', ['complaint' => $complaint->id, 'search' => request()->query('search'), 'status_filter' => request()->query('status_filter')]) }}"><img src="{{ asset('images/view_file.png') }}" alt="" width="30px" height="30px"></a>
                                         @if ($complaint->status_id != 1 && $complaint->verified_complaint_id != null)
-                                            <a href="{{ route('helpdesk.verified_complaints.show', ['verified_complaint' => $complaint->verified_complaint_id]) }}"><i class="fa-solid fa-file-lines view_icon me-2"></i></a>
                                             @if ($complaint->status_id == 5)
                                                 <a href="{{ route('helpdesk.verified_complaints.show', ['verified_complaint' => $complaint->verified_complaint_id]) }}#operation"><i class="fa-solid fa-people-roof assign_icon"></i></a>
                                             @elseif ($complaint->status_id == 4)

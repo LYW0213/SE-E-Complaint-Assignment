@@ -197,16 +197,23 @@ class UserController extends Controller
     {
         $delete_user = $user;
         $name = $delete_user->email;
-        $delete_user->user_roles()->delete();
-        $delete_user->complaints()->update(['user_id' => null]);
-        $delete_user->complaint_loggings()->update(['user_id' => null]);
 
-        if ($delete_user->avatar_file_path != null && $delete_user->avatar_file_name != null) {
-            $this->deleteFile($delete_user->avatar_file_path.$delete_user->avatar_file_name);
+        if($user -> id == 1){
+            return redirect()->route('users.index')->with('action_message', 'Error! The administrator cannot delete : '.$name.' !');
         }
 
-        $delete_user->delete();
+            $delete_user->user_roles()->delete();
+            $delete_user->complaints()->update(['user_id' => null]);
+            $delete_user->complaint_loggings()->update(['user_id' => null]);
 
-        return redirect()->route('users.index')->with('action_message', 'Successfully to delete user: '.$name.' !');
+            if ($delete_user->avatar_file_path != null && $delete_user->avatar_file_name != null) {
+            $this->deleteFile($delete_user->avatar_file_path.$delete_user->avatar_file_name);
+            }
+
+            $delete_user->delete();
+
+            return redirect()->route('users.index')->with('action_message', 'Successfully to delete user: '.$name.' !');
+        
+        
     }
 }

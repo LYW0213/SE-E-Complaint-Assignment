@@ -12,7 +12,7 @@
             @include('components.status_card', ['route' => 'executive.verified_complaints.index'])
         @endforeach
 
-    </div>
+    </div>  
 </div>
 
 @endsection

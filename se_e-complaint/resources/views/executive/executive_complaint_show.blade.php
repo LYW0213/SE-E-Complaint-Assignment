@@ -53,7 +53,7 @@
                     <h3>Executive Operation</h3>
                     @if ($verified_complaint->complaint_action_id == 1)
                         <div class="d-lg-flex justify-content-between d-block">
-                            <div class="col-lg-6 col-12 ml-1">
+                            <div class="col-lg-6 col-12" style="margin: 15px;">
                                 <div class="form-check fs-5 standard_content">
                                     <input class="form-check-input" type="radio" value="1" id="acceptAction" name="action" @if('1' == old('action')) checked @endif>
                                     <label class="form-check-label" for="acceptAction">

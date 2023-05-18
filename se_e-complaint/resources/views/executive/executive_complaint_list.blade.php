@@ -9,8 +9,8 @@
                     <div class="input-group rounded">
                         <input type="text" name="search" value="{{ request()->query('search') }}" class="form-control rounded" placeholder="Search Title"
                             aria-label="Search" aria-describedby="search-addon" />
-                        <span class="input-group-text border-0" id="search-addon">
-                            <input class="btn btn-info" type="submit">
+                        <span id="search-addon">
+                            <input class="btn btn-success mx-2" type="submit" value="Search">
                         </span>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             [
                 'id' => 1,
                 'email' => 'superadmin@newera.edu.my',
-                'password' => '$2y$10$joOJKbdH1ABzfEO528bDA.wYJOvyMSsYo8oMDLkzwgbnyL7Fsv6EK',
+                'password' => '111',
                 'first_name' => 'Super',
                 'last_name' => 'Admin',
                 'gender_id' => 1,

@@ -9,8 +9,8 @@
                     <div class="input-group rounded">
                         <input type="text" name="search" value="{{ request()->query('search') }}" class="form-control rounded" placeholder="Search Title"
                             aria-label="Search" aria-describedby="search-addon" />
-                        <span class="input-group-text border-0" id="search-addon">
-                            <input class="btn btn-info" type="submit">
+                        <span id="search-addon">
+                            <input class="btn btn-success mx-2" type="submit" value="Search">
                         </span>
                     </div>
                 </div>
@@ -47,10 +47,10 @@
                             <td>{{ $verified_complaint->status->name }}</td>
                             <td>
                                 <div class="d-inline-flex w-100 justify-content-around">
-                                    <a href="{{ route('helpdesk.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}"><i class="fa-solid fa-file-lines view_icon me-2"></i></a>
+                                    <a href="{{ route('helpdesk.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}"><img src="{{ asset('images/view_file.png') }}" alt="" width="30px" height="30px"></a>
 
                                     @if ($verified_complaint->status_id == 2 || $verified_complaint->status_id == 5)
-                                        <a href="{{ route('helpdesk.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}#operation"><i class="fa-solid fa-people-roof assign_icon"></i></a>
+                                        <a href="{{ route('helpdesk.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}#operation"><img src="{{ asset('images/checkmark.png') }}" alt="" width="30px" height="30px"></a>
                                     @endif
                                     @if (($verified_complaint->status_id == 2 && $verified_complaint->complaint_action_id == 4) || $verified_complaint->status_id == 4)
                                         <a href="{{ route('helpdesk.verified_complaints.show', ['verified_complaint' => $verified_complaint->id]) }}#operation"><i class="fa-solid fa-pen-to-square edit_icon"></i></a>
